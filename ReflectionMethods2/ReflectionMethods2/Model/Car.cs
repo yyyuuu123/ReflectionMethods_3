@@ -8,5 +8,17 @@ namespace ReflectionMethods2.Model
 {
     internal class Car
     {
+
+
+
+        public string PrintInfoCar()
+        {
+            return "1";
+        }
+
+        public void UpdateModel(string model)
+        {
+
+        }
     }
 }
