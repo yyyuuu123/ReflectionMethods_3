@@ -21,7 +21,7 @@ List<MethodInfo> methodInfos = new List<MethodInfo>(typeCar.GetMethods()).FindAl
 foreach (MethodInfo method in methodInfos)
 {
     List<ParameterInfo> methodArgs = new List<ParameterInfo>(method.GetParameters());
-    //List<string> args1 = methodArgs.ConvertAll(x => $"{x.ParameterType.Name} {x.Name}");
+    int listLength = methodArgs.Count;
 
     if (methodArgs.Count == 0)
     {
@@ -40,14 +40,17 @@ foreach (MethodInfo method in methodInfos)
         Console.Write(method.Name);
         Console.Write("(");
 
-        //foreach (ParameterInfo param in methodArgs)
-        for (int i = 0; methodArgs.Count < i; i++)
+        for (int i = 0; i < methodArgs.Count ; i++)
         {
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.Write($"{UtilMethods.GetAliasType(methodArgs[i].ParameterType.Name)}");
             Console.ResetColor();
             Console.Write(" ");
-            Console.Write(methodArgs[i].Name + ", ");
+            Console.Write(methodArgs[i].Name);
+            if (i < listLength-1)
+            {
+                Console.Write(", ");
+            }
         }
 
         Console.Write(")");

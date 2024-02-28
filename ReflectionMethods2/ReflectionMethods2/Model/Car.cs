@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace ReflectionMethods2.Model
 {
-    internal class Car //: IPrint
+    internal class Car : IPrint
     {
-        //public string PrintInfo()
-        //{
-        //    return "1";
-        //}
+        public string PrintInfo()
+        {
+            return "1";
+        }
 
-        //public void UpdateModel(string model)
-        //{
+        public void UpdateModel(string model)
+        {
 
-        //}
+        }
 
         public void Update(string enterprise, string model, int year)
         {
