@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using ReflectionMethods2.Model;
+using ReflectionMethods2.Utils;
 using System.Reflection;
 
 Console.WriteLine("Доступные классы и методы:");
@@ -20,24 +21,37 @@ List<MethodInfo> methodInfos = new List<MethodInfo>(typeCar.GetMethods()).FindAl
 foreach (MethodInfo method in methodInfos)
 {
     List<ParameterInfo> methodArgs = new List<ParameterInfo>(method.GetParameters());
-    List<string> args1 = methodArgs.ConvertAll(x => $"{x.ParameterType.Name} {x.Name}");
+    //List<string> args1 = methodArgs.ConvertAll(x => $"{x.ParameterType.Name} {x.Name}");
 
-    if (methodArgs.Count > 0)
+    if (methodArgs.Count == 0)
     {
-        foreach (ParameterInfo param in methodArgs)
-        {
-            Console.Write(method.Name);
-            Console.Write("(");
-            Console.Write(param.ParameterType.Name);
-            Console.Write(" ");
-            Console.Write(param.Name);
-            Console.Write(")");
-            Console.WriteLine();
-        }
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.Write(UtilMethods.GetAliasType(method.ReturnType.Name));
+        Console.Write(" ");
+        Console.ResetColor();
+        Console.WriteLine($"{method.Name}()");
     }
     else
     {
-        Console.WriteLine($"{method.Name}()");
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.Write(UtilMethods.GetAliasType(method.ReturnType.Name));
+        Console.Write(" ");
+        Console.ResetColor();
+        Console.Write(method.Name);
+        Console.Write("(");
+
+        //foreach (ParameterInfo param in methodArgs)
+        for (int i = 0; methodArgs.Count < i; i++)
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write($"{UtilMethods.GetAliasType(methodArgs[i].ParameterType.Name)}");
+            Console.ResetColor();
+            Console.Write(" ");
+            Console.Write(methodArgs[i].Name + ", ");
+        }
+
+        Console.Write(")");
+        Console.WriteLine();
     }
 }
 
