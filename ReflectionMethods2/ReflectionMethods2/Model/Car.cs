@@ -11,7 +11,7 @@ namespace ReflectionMethods2.Model
     {
         private string _enterprise;
         private string _model;
-        private string _year;
+        private int _year;
         public string PrintInfo()
         {
             return "1";
@@ -24,7 +24,9 @@ namespace ReflectionMethods2.Model
 
         public void Update(string enterprise, string model, int year)
         {
-
+            _enterprise = enterprise;
+            _model = model;
+            _year = year;
         }
 
     }
