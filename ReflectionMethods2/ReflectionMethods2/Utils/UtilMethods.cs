@@ -34,7 +34,9 @@ namespace ReflectionMethods2.Utils
                     Console.Write(UtilMethods.GetAliasType(method.ReturnType.Name));
                     Console.Write(" ");
                     Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.Magenta;
                     Console.WriteLine($"{method.Name}()");
+                    Console.ResetColor();
                 }
                 else
                 {
@@ -42,7 +44,9 @@ namespace ReflectionMethods2.Utils
                     Console.Write(UtilMethods.GetAliasType(method.ReturnType.Name));
                     Console.Write(" ");
                     Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.Magenta;
                     Console.Write(method.Name);
+                    Console.ResetColor();
                     Console.Write("(");
 
                     for (int i = 0; i < methodArgs.Count; i++)
