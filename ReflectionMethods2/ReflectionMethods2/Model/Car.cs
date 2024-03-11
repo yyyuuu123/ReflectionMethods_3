@@ -9,6 +9,9 @@ namespace ReflectionMethods2.Model
 {
     internal class Car : IPrint
     {
+        private string _enterprise;
+        private string _model;
+        private string _year;
         public string PrintInfo()
         {
             return "1";

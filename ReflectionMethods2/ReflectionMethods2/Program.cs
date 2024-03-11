@@ -16,3 +16,6 @@ UtilMethods.Print(typeBook);
 
 Console.WriteLine();
 Console.WriteLine();
+
+Console.Write("Введите команду: ");
+string inputUser = Console.ReadLine();
