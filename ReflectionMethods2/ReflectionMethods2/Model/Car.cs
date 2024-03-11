@@ -12,9 +12,10 @@ namespace ReflectionMethods2.Model
         private string _enterprise;
         private string _model;
         private int _year;
-        public string PrintInfo()
+        public void PrintInfo()
         {
-            return "1";
+            string s = _enterprise + " " + _model + " " + _year;
+            Console.WriteLine(s);
         }
 
         public void UpdateModel(string model)

@@ -9,7 +9,7 @@ namespace ReflectionMethods2.Model
 {
     internal class Book : IPrint
     {
-        public string PrintInfo()
+        public void PrintInfo()
         {
             throw new NotImplementedException();
         }

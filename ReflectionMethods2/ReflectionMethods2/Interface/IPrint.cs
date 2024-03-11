@@ -8,6 +8,6 @@ namespace ReflectionMethods2.Interface
 {
     internal interface IPrint
     {
-        public string PrintInfo();
+        public void PrintInfo();
     }
 }
