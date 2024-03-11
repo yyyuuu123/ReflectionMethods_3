@@ -12,6 +12,15 @@ namespace ReflectionMethods2.Model
         private string _enterprise;
         private string _model;
         private int _year;
+
+
+        public Car(string enterprise,string model, int year)
+        {
+            _enterprise = enterprise;
+            _model = model;
+            _year = year;
+        
+        }
         public void PrintInfo()
         {
             string s = _enterprise + " " + _model + " " + _year;

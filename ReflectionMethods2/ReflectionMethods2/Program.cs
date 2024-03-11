@@ -5,10 +5,14 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 
 
-
+Car car = new Car("Toyota", "Carolla", 2023);
 //Get Type of object
 Type typeCar = typeof(Car);
 Type typeBook = typeof(Book);
+
+
+
+
 
 Console.WriteLine("Доступные классы и методы:");
 
@@ -27,7 +31,6 @@ MatchCollection matches = regex.Matches(inputUser);
 if(matches.Count > 0)
 {
     string asseblayName = Assembly.GetExecutingAssembly().GetName().Name;
-
     Type typeClass = Type.GetType($"{asseblayName}.Model.{matches[0].Value}");
 
     for (int i = 2; i < matches.Count; i++)
